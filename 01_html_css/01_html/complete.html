@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML introduction</title>
+</head>
+<body>
+
+<!--https://web.dev/learn/html/welcome-->
+
+<!--Headers, paragraphs-->
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<h4>Header 4</h4>
+<h5>Header 5</h5>
+<h6>Header 6</h6>
+
+<p>Lorem ipsum</p>
+
+<h2>Formatting</h2>
+<!--Formatting-->
+<p>
+  <b>Bold text</b>
+</p>
+<p>
+  <strong>Strong text</strong>
+</p>
+
+<p>
+  <i>Italic text</i>
+</p>
+
+<p>
+  <em>Emaphasized text</em>
+</p>
+
+<p>
+  Normal text <sub>Subscript text</sub>
+</p>
+
+<p>
+  Normal text <sub>Superscript text</sub>
+</p>
+
+<p>
+  <del>Deleted text</del>
+</p>
+
+<p>
+  <mark>Marked text</mark>
+</p>
+
+<p>
+  This is <code>code</code>
+</p>
+
+<p>
+  Text with a<br/>
+  line break
+</p>
+
+<!--Links-->
+<p>
+  <a href="https://google.com">Google</a>
+</p>
+
+<p>
+  <a target="_blank" href="https://google.com">Google in new tab</a>
+</p>
+
+<!--Images-->
+<p>
+  <img src="assets/img.png" height="300" alt="Image example"/>
+</p>
+
+<!--Buttons-->
+<p>
+  <button>Click me</button>
+</p>
+
+<!--Inputs-->
+<h2>Inputs</h2>
+<p>
+  <input type="button" value="Input button"/>
+</p>
+<p>
+  <label>
+    Text input
+    <input type="text"/>
+  </label>
+</p>
+
+<!----Number-->
+<p>
+  <label>
+    Number input
+    <input type="number" step="0.1"/>
+  </label>
+</p>
+
+<!----Email-->
+<p>
+  <label>
+    Email input
+    <input type="email"/>
+  </label>
+</p>
+
+<!----Password-->
+<p>
+  <label>
+    Password input
+    <input type="password"/>
+  </label>
+</p>
+
+<!----Checkbox-->
+<p>
+  <label>
+    Programming
+    <input type="checkbox" name="hobbies" value="programming"/>
+  </label>
+  <br>
+  <label>
+    Cycling
+    <input type="checkbox" name="hobbies" value="cycling"/>
+  </label>
+  <br>
+  <label>
+    Reading
+    <input type="checkbox" name="hobbies" value="reading">
+  </label>
+</p>
+
+<!----Radio-->
+<p>
+  <label>
+    <input type="radio" name="hobbies-radio" value="programming">
+    Programming
+  </label>
+  <br>
+  <label>
+    <input type="radio" name="hobbies-radio" value="cycling">
+    Cycling
+  </label>
+  <br>
+  <label>
+    <input type="radio" name="hobbies-radio" value="reading">
+    Reading
+  </label>
+</p>
+
+<!----Date-->
+<p>
+  <label>
+    Date input
+    <input type="date">
+  </label>
+</p>
+
+<!----File-->
+<p>
+  <label>
+    File input
+    <input type="file" value="Choose file">
+  </label>
+</p>
+
+
+<!--Textarea-->
+<label>
+  <textarea></textarea>
+</label>
+
+<h2>Tables</h2>
+
+<!--Tables-->
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Year of study</th>
+    <th>Interests</th>
+    <th>Programming languages</th>
+  </tr>
+  <tr>
+    <td>Andrey</td>
+    <td>27</td>
+    <td>-</td>
+    <td>Cycling</td>
+    <td>JavaScript</td>
+  </tr>
+</table>
+
+<h2>Lists</h2>
+<!--Lists-->
+<ol>
+  <li>Headers</li>
+  <li>Links</li>
+  <li>Inputs</li>
+  <li>Tables</li>
+</ol>
+
+<ul>
+  <li>Headers</li>
+  <li>Links</li>
+  <li>Inputs</li>
+  <li>Tables</li>
+</ul>
+
+<!--Blocks, spans-->
+
+<div>
+  Lorem ipsum
+</div>
+
+<p>
+  Lorem Ipsum is <span>simply dummy text</span> of the printing and typesetting industry. Lorem
+  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+  took a galley of type and scrambled it to make a type specimen book. It has survived not only five
+  centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+  popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+  more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+  Ipsum.
+</p>
+
+<!--Iframes-->
+<iframe src="https://wikipedia.org" height="300" width="400"></iframe>
+
+<!--Forms-->
+<form action="/api/submit">
+  <p>
+    <label>
+      Name:
+      <input type="text" name="name">
+    </label>
+  </p>
+  <p>
+    <label>
+      Age:
+      <input type="number" name="age">
+    </label>
+  </p>
+  <p>
+    <label>
+      Email:
+      <input type="email" name="email">
+    </label>
+  </p>
+  <input type="submit" value="Submit">
+</form>
+
+<!--Audio, video-->
+<video controls width="250">
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"/>
+</video>
+</body>
+</html>
