@@ -1,10 +1,12 @@
-* https://www.youtube.com/watch?v=1PnVor36_40 - CSS introduction
+1. Basics
+2. Display
+3. Position
+4. Overflow
+5. Flexbox
 
 * https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators
     - CSS combinators
-
-* https://jenkov.com/tutorials/css/precedence.html - CSS precedence
-
+* https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity - CSS specificity
 * https://developer.mozilla.org/en-US/docs/Web/CSS/position - positioning
 * https://developer.mozilla.org/en-US/docs/Web/CSS/display - display property
 
