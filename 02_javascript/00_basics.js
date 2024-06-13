@@ -20,10 +20,6 @@
  *
  * Comparisons. Strict equality ===.
  *
- * Conditional operators: if, else, else if, ?.
- * Task: implement sign function.
- * Task: rewrite if into ?.
- *
  * Loops - while and for. Breaking and continuing the loop.
  * Task: output even numbers in a loop.
  * Task: calculate prime numbers below 1000 and print them.
@@ -32,15 +28,22 @@
  * Returning a value.
  * Assigning function to a variable.
  * Arrow functions.
+
+ * Conditional operators: if, else, else if, ?.
+ * Task: implement sign function.
+ * Task: rewrite if into ?.
  *
  *
  * Practice:
  *
+ * (1)
  * Implement factorial function
  *
+ * (2)
  * sum(x)(y) = x + y
  *
- * const count = makeCounter()
+ * (3)
+ * const count = makeCounter();
  * count() -> 0
  * count() -> 1
  * count() -> 2
