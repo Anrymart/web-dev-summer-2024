@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetching data from server</title>
+  <link href="https://fonts.googleapis.com/css?family=Jacques+Francois" rel="stylesheet">
+  <style>
+    body {
+      background: #eee;
+      font-family: 'Jacques Francois', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+    }
+
+    .quote-container {
+      margin-top: 40px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 40px;
+      max-width: 60%;
+      min-width: 600px;
+    }
+
+    .quote {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .author {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 20px;
+      color: #6f6f6f;
+    }
+
+    .load-button {
+      font-size: 16px;
+      margin-top: 30px;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .load-button:hover {
+      background-color: #34a5dd;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+<div class="quote-container">
+  <div class="quote">
+    “<span id="quote">The most amazing achievement of the computer software industry is its continuing
+        cancellation of the steady and staggering gains made by the computer hardware industry.</span>“
+  </div>
+  <div class="author">— <span id="author">Henry Petroski</span></div>
+</div>
+<button class="load-button" id="button">Load next</button>
+
+<script>
+  // Select elements by ids
+  const quote = document.getElementById('quote');
+  const author = document.getElementById('author');
+  const button = document.getElementById('button');
+
+  button.addEventListener('click', () => {
+    button.textContent = 'Loading...';
+    button.setAttribute('disabled', 'true');
+    fetch('https://api.quotable.io/quotes/random?tags=technology')
+        .then(response => response.json())
+        .then(([data]) => {
+          quote.textContent = data.content;
+          author.textContent = data.author;
+          button.textContent = 'Load next';
+          button.removeAttribute('disabled');
+        });
+  });
+</script>
+
+</body>
+</html>

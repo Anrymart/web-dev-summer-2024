@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas tutorial</title>
+</head>
+<body>
+
+<canvas id="canvas" width="800" height="600"></canvas>
+
+<script>
+
+  let canvas = document.getElementById("canvas");
+  let context = canvas.getContext("2d");
+
+  let pen = {
+    x: 0,
+    y: 0,
+    active: false,
+  };
+
+  canvas.addEventListener('mousedown', (event) => {
+    pen = {
+      x: event.offsetX,
+      y: event.offsetY,
+      active: true,
+    };
+  });
+
+  document.addEventListener('mousemove', (event) => {
+    if (pen.active) {
+      context.moveTo(pen.x, pen.y);
+      context.lineTo(event.offsetX, event.offsetY);
+      context.stroke();
+    }
+
+    // Update pen coordinates
+    pen.x = event.offsetX;
+    pen.y = event.offsetY;
+  });
+
+  document.addEventListener('mouseup', () => {
+    pen.active = false;
+  });
+</script>
+
+</body>
+</html>

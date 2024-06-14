@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Camera API</title>
+</head>
+<body>
+
+<div id="screenshot" style="text-align:center;">
+  <video id="video" autoplay></video>
+  <p>
+    <button id="capture-button">Capture video</button>
+  </p>
+  <p>
+    <button id="stop-button">Stop video</button>
+  </p>
+
+  <!--  Screenshots -->
+  <!--  <p>-->
+  <!--    <button id="screenshot-button" disabled="">Take screenshot</button>-->
+  <!--  </p>-->
+  <!--  <img id="screenshot-img">-->
+</div>
+
+<script>
+
+  const captureVideoButton = document.querySelector('#capture-button');
+  const stopVideoButton = document.querySelector('#stop-button');
+  // const screenshotButton = document.querySelector('#screenshot-button');
+  const video = document.querySelector('#video');
+
+  let videoStream;
+
+  captureVideoButton.addEventListener('click', () => {
+    navigator.mediaDevices.getUserMedia({
+      video: true
+    })
+    .then((stream) => {
+          videoStream = stream;
+          // screenshotButton.disabled = false;
+          video.srcObject = stream;
+        }
+    )
+    .catch((error) => {
+          console.error('Error: ', error);
+        }
+    );
+  });
+
+  stopVideoButton.addEventListener('click', () => {
+    for (const track of videoStream.getTracks()) {
+      track.stop();
+    }
+  });
+
+  // Taking screenshots and displaying them on canvas:
+
+  // const img = document.querySelector('#screenshot-img');
+  // // Create canvas element, but don't add it to page (called offscreen canvas)
+  // const canvas = document.createElement('canvas');
+  //
+  // function takeScreenshot() {
+  //   canvas.width = video.videoWidth;
+  //   canvas.height = video.videoHeight;
+  //   canvas.getContext('2d').drawImage(video, 0, 0);
+  //   img.src = canvas.toDataURL('image/webp');
+  // }
+  //
+  // screenshotButton.addEventListener('click', takeScreenshot);
+  // video.addEventListener('click', takeScreenshot);
+
+</script>
+
+</body>
+</html>
