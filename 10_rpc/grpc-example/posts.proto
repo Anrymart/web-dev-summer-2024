@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message Post {
+  string id = 1;
+  string title = 2;
+  string body = 3;
+  string postImage = 4;
+}
+
+service PostsService {
+  rpc GetAllPosts (Empty) returns (PostList) {}
+  rpc GetPost (PostId) returns (Post) {}
+  rpc DeletePost (PostId) returns (Empty) {}
+  rpc EditPost (Post) returns (Post) {}
+  rpc AddPost (Post) returns (Post) {}
+}
+
+message PostId {
+  string id = 1;
+}
+
+message Empty {}
+
+message PostList {
+  repeated Post posts = 1;
+}
